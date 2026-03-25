@@ -14,7 +14,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState ,useRef,MouseEvent} from 'react';
 import { MacbookScroll } from '@/components/ui/macbook-scroll';
 import { TextHoverEffect } from '@/components/ui/text-hover-effect';
-import RotatingTitles from '@/components/titles';
+
 export default function LandingPage() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
