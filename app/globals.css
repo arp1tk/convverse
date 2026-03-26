@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:is(.dark *));
 
 .dark {
   --background: oklch(0.145 0 0);
@@ -84,11 +84,11 @@
 .flowing-glow {
   background: linear-gradient(
     90deg,
-    #ef4444,
-    #fb7185,
+    #c30010,
+    #d6455b,
     #ffffff,
     #fb7185,
-    #ef4444
+    #c30010
   );
   background-size: 200% 100%;
 
