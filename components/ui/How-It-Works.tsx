@@ -1,12 +1,11 @@
-import React from 'react';
 
 const HowItWorksEditorial = () => {
   return (
-    <section className="w-full bg-white dark:bg-black py-20 md:py-22 px-6 font-sans">
+    <section className="w-full bg-white dark:bg-black py-14 md:py-16 px-6 font-sans">
       <div className="max-w-[1100px] mx-auto">
         
         {/* Section Header */}
-        <div className="text-center mb-18">
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-neutral-900 dark:text-neutral-100">
             How it works
           </h2>

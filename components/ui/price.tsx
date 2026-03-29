@@ -41,11 +41,11 @@ const ModernPricingSection = () => {
   ];
 
   return (
-    <section className="bg-white dark:bg-black py-24 px-6 font-sans">
+    <section id='pricing' className="bg-white dark:bg-black py-16 px-6 font-sans">
       <div className="max-w-5xl mx-auto">
         
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-neutral-900 dark:text-white mb-4">
             Transparent Pricing
           </h2>
@@ -55,7 +55,7 @@ const ModernPricingSection = () => {
         </div>
 
         {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {plans.map((plan, idx) => (
             <motion.div
               key={idx}

@@ -27,6 +27,9 @@ import HowItWorksEditorial from "@/components/ui/How-It-Works";
 import ModernPricingSection from "@/components/ui/price";
 import { IconBrandChrome } from '@tabler/icons-react';
 import { MouseEvent, useEffect, useRef, useState } from 'react';
+import Link from "next/link";
+import IntelligenceBento from "@/components/ui/bento";
+import IntelligenceBentoGrid from "@/components/ui/bento";
   export default function LandingPage() {
     const { resolvedTheme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
@@ -191,7 +194,7 @@ import { MouseEvent, useEffect, useRef, useState } from 'react';
   </MobileNav>
 </Navbar>
         {/* Hero Section */}
-  <header className="relative pt-30 pb-16 bg-white dark:bg-black overflow-hidden">
+  <header className="relative pt-30 pb-15 bg-white dark:bg-black overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10 text-center flex flex-col items-center">
           
           {/* Sub-header with Flowing Glow */}
@@ -221,9 +224,11 @@ import { MouseEvent, useEffect, useRef, useState } from 'react';
             <button className="bg-[#171717] dark:bg-white text-white dark:text-black w-full sm:w-auto px-6 py-2.5 rounded-xl text-sm font-medium transition-all hover:opacity-90 active:scale-[0.98]">
               Try for Chrome-Its's free
             </button>
+            <Link href="#pricing">
             <button className="bg-white dark:bg-transparent border border-neutral-200 dark:border-neutral-800 text-black dark:text-white w-full sm:w-auto px-6 py-2.5 rounded-xl text-sm font-medium transition-all hover:bg-neutral-50 dark:hover:bg-neutral-900 active:scale-[0.98]">
               View pricing
             </button>
+            </Link>
           </div>
 
           {/* Social Proof */}
@@ -239,7 +244,7 @@ import { MouseEvent, useEffect, useRef, useState } from 'react';
         </div>
       </header>
       
-  <section id="dashboard" className="relative w-full py-12 px-4 md:px-20 lg:px-32 bg-white dark:bg-black">
+  <section id="dashboard" className="relative w-full py-8 px-4 md:px-20 lg:px-32 bg-white dark:bg-black">
           <div 
             ref={containerRef}
             onMouseMove={handleMouseMove}
@@ -385,7 +390,7 @@ import { MouseEvent, useEffect, useRef, useState } from 'react';
       <div className="max-w-7xl mx-auto border-x border-neutral-100 dark:border-neutral-900">
           
           {/* Header Section */}
-          <div className="flex flex-col items-center pt-12 pb-10 text-center px-6">
+          <div className="flex flex-col items-center pt-8 pb-8 text-center px-6">
             <p className="text-[#EF4444] dark:text-[#FB7185] text-sm font-normal tracking-wide mb-4">Core Intelligence</p>
             <h2 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6 leading-tight max-w-2xl">
               Built for Real-time Sales Performance
@@ -514,6 +519,8 @@ import { MouseEvent, useEffect, useRef, useState } from 'react';
           {/* <RotatingTitles/> */}
         </div>
       </section>
+      
+  {/* <IntelligenceBentoGrid/> */}
         {/* Bento Grid Features */}
         {/* <section id="features" className="py-24 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
@@ -561,7 +568,7 @@ import { MouseEvent, useEffect, useRef, useState } from 'react';
      <ModernPricingSection/>
 
     {/* Download CTA Section */}
-    <section id="cta" className="w-full bg-white dark:bg-black pt-10 pb-24 md:pt-14 md:pb-32 px-6">
+    <section id="cta" className="w-full bg-white dark:bg-black pt-8 pb-16 md:pt-10 md:pb-20 px-6">
       {/* Large Rounded Container with Brand Background */}
       <div className="max-w-7xl mx-auto rounded-[2rem] bg-[#c30010] p-4 md:p-8 shadow-2xl shadow-[#c30010]/20">
         
@@ -619,10 +626,10 @@ import { MouseEvent, useEffect, useRef, useState } from 'react';
 {/* <PremiumPricing/> */}
         {/* FAQ */}
   {/* FAQ Section - Full Width Divider Style */}
-        <section className="relative py-10 bg-white dark:bg-black overflow-hidden">
+        <section className="relative py-8 bg-white dark:bg-black overflow-hidden">
       
           <div className="max-w-4xl mx-auto px-6 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-medium mb-16 text-center tracking-tight text-black dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-medium mb-10 text-center tracking-tight text-black dark:text-white">
               Frequently asked questions
             </h2>
             
@@ -661,7 +668,7 @@ import { MouseEvent, useEffect, useRef, useState } from 'react';
         </section>
 
         {/* Footer */}
-      <footer className="relative w-full py-20  md:pb-32 bg-white dark:bg-black overflow-hidden border-t border-neutral-200 dark:border-neutral-900">
+      <footer className="relative w-full py-14 md:pb-20 bg-white dark:bg-black overflow-hidden border-t border-neutral-200 dark:border-neutral-900">
       
       {/* 1. ACTUAL FOOTER CONTENT (Standard Grid Layout) */}
      <div className="relative z-10 max-w-7xl mx-auto px-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
