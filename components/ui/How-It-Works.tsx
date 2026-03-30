@@ -1,7 +1,7 @@
 
 const HowItWorksEditorial = () => {
   return (
-    <section className="w-full bg-white dark:bg-black py-14 md:py-16 px-6 font-sans">
+    <section className="w-full bg-white dark:bg-black py-14 md:py-10 px-6 font-sans">
       <div className="max-w-[1100px] mx-auto">
         
         {/* Section Header */}

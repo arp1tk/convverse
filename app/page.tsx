@@ -24,12 +24,12 @@ import {
 import { useTheme } from "next-themes";
 
 import HowItWorksEditorial from "@/components/ui/How-It-Works";
+import FeaturesDataFlow from "@/components/ui/features-data-flow";
 import ModernPricingSection from "@/components/ui/price";
+import DynamicHowItWorks from "@/components/ui/works";
 import { IconBrandChrome } from '@tabler/icons-react';
-import { MouseEvent, useEffect, useRef, useState } from 'react';
 import Link from "next/link";
-import IntelligenceBento from "@/components/ui/bento";
-import IntelligenceBentoGrid from "@/components/ui/bento";
+import { MouseEvent, useEffect, useRef, useState } from 'react';
   export default function LandingPage() {
     const { resolvedTheme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
@@ -156,7 +156,7 @@ import IntelligenceBentoGrid from "@/components/ui/bento";
       <img
         src="/logo.png"
         alt="convverse.ai"
-        className="h-8 object-contain"
+        className="h-8 object-contain dark:invert"
       />
       <div className="flex items-center gap-2">
         <button
@@ -275,123 +275,21 @@ import IntelligenceBentoGrid from "@/components/ui/bento";
               className="absolute inset-0 -z-10 blur-[80px] opacity-20 dark:opacity-40 transition-transform duration-700 ease-out pointer-events-none"
               style={{
                 transform: `translate(${offset.x * 1.5}px, ${offset.y * 1.5}px)`,
-                background: 'radial-gradient(circle, #EF4444 0%, transparent 70%)' 
+                background: 'radial-gradient(circle, #c30010 0%, transparent 70%)' 
               }}
             />
           </div>
   
         </section>
+        <DynamicHowItWorks/>
         <HowItWorksEditorial/>
-        {/* <section id="how-it-works" className="relative overflow-hidden bg-white py-20 dark:bg-black md:py-24">
-          <div className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-[#EF4444]/10 blur-3xl" />
-          <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
-
-          <div className="relative z-10 mx-auto max-w-7xl px-6">
-            <div className="mx-auto mb-14 max-w-2xl text-center">
-              <span className="inline-flex items-center rounded-full border border-neutral-200 bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-600 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-300">
-                Process
-              </span>
-              <h2 className="mt-5 text-3xl font-medium tracking-tight text-black dark:text-white md:text-5xl">
-                How It Works In 15 Minutes
-              </h2>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-base">
-                A simple setup flow, then real-time guidance during every sales conversation.
-              </p>
-            </div>
-
-            <div className="relative">
-              <div className="pointer-events-none absolute left-0 right-0 top-9.5 hidden h-px bg-linear-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700 md:block" />
-
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-5">
-                {[
-                  {
-                    step: "01",
-                    title: "Sign Up",
-                    desc: "Create your workspace and invite your team in minutes.",
-                    icon: <Globe className="h-4 w-4" />,
-                  },
-                  {
-                    step: "02",
-                    title: "Configure",
-                    desc: "Set qualification prompts and your preferred playbook.",
-                    icon: <Layout className="h-4 w-4" />,
-                  },
-                  {
-                    step: "03",
-                    title: "Upload Docs",
-                    desc: "Drop in FAQs, battlecards, and product collateral.",
-                    icon: <Plus className="h-4 w-4" />,
-                  },
-                  {
-                    step: "04",
-                    title: "Join Calls",
-                    desc: "Use it live in Google Meet, Zoom, and Teams.",
-                    icon: <Monitor className="h-4 w-4" />,
-                  },
-                  {
-                    step: "05",
-                    title: "Close Faster",
-                    desc: "Get real-time guidance, objections, and next-best actions.",
-                    icon: <Zap className="h-4 w-4" />,
-                  },
-                ].map((item) => (
-                  <article
-                    key={item.step}
-                    className="group relative rounded-2xl border border-neutral-200 bg-white/90 p-5 shadow-[0_10px_35px_-20px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_-20px_rgba(0,0,0,0.45)] dark:border-neutral-800 dark:bg-neutral-950/85"
-                  >
-                    <div className="mb-4 flex items-center justify-between">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#EF4444]/10 text-[#EF4444] dark:bg-[#FB7185]/10 dark:text-[#FB7185]">
-                        {item.icon}
-                      </span>
-                      <span className="text-[11px] font-bold tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
-                        STEP {item.step}
-                      </span>
-                    </div>
-
-                    <h3 className="mb-2 text-base font-semibold tracking-tight text-black dark:text-white">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                      {item.desc}
-                    </p>
-
-                    <svg
-                      viewBox="0 0 120 12"
-                      className="mt-5 h-3 w-full text-neutral-200 opacity-80 transition-opacity group-hover:opacity-100 dark:text-neutral-800"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <path d="M1 6h118" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 6" />
-                    </svg>
-                  </article>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-12 rounded-2xl border border-neutral-200 bg-neutral-50/80 p-6 dark:border-neutral-800 dark:bg-neutral-950/60 md:p-8">
-              <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#EF4444] dark:text-[#FB7185]">
-                    Ready To Start
-                  </p>
-                  <p className="mt-2 text-lg font-medium tracking-tight text-black dark:text-white">
-                    Launch your first guided call this week.
-                  </p>
-                </div>
-                <button className="inline-flex items-center gap-2 rounded-xl bg-black px-5 py-2.5 text-sm font-semibold text-white transition-all hover:opacity-90 dark:bg-white dark:text-black">
-                  Get Started Now
-                  <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section> */}
-    <section id="features" className="relative  bg-white dark:bg-black overflow-hidden">
+     
+    <section id="features" className="relative bg-white dark:bg-black overflow-hidden py-12 md:py-14">
       <div className="max-w-7xl mx-auto border-x border-neutral-100 dark:border-neutral-900">
           
           {/* Header Section */}
-          <div className="flex flex-col items-center pt-8 pb-8 text-center px-6">
-            <p className="text-[#EF4444] dark:text-[#FB7185] text-sm font-normal tracking-wide mb-4">Core Intelligence</p>
+          <div className="flex flex-col items-center pt-4 pb-12 text-center px-6 md:px-8 lg:px-16">
+            <p className="text-[#c30010] dark:text-[#c30010] text-sm font-normal tracking-wide mb-4">Core Intelligence</p>
             <h2 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6 leading-tight max-w-2xl">
               Built for Real-time Sales Performance
             </h2>
@@ -415,7 +313,7 @@ import IntelligenceBentoGrid from "@/components/ui/bento";
                 <div className="space-y-3 mt-4">
                   {['Configure BANT or MEDDPICC', 'Live response summary', 'Follow-up on incomplete data', ].map((text, i) => (
                     <div key={i} className="flex items-center gap-3 bg-white dark:bg-black p-3.5 rounded-xl border border-neutral-100 dark:border-neutral-800 shadow-sm">
-                        <CheckCircle2 className="w-4 h-4 text-[#EF4444]" />
+                        <CheckCircle2 className="w-4 h-4 text-[#c30010]" />
                         <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300">{text}</span>
                     </div>
                   ))}
@@ -508,6 +406,7 @@ import IntelligenceBentoGrid from "@/components/ui/bento";
 {/* Integration Node Flow */}
 {/* <IntegrationFlow/> */}
 {/* <IntegrationFlow/> */}
+          {/* <FeaturesDataFlow /> */}
           {/* Use Cases Bottom Bar */}
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-100 dark:divide-neutral-900 border-t border-neutral-100 dark:border-neutral-900">
             {['Real-time Sourcing', 'Rapid Onboarding', 'Deal Summaries'].map((title) => (
@@ -568,7 +467,7 @@ import IntelligenceBentoGrid from "@/components/ui/bento";
      <ModernPricingSection/>
 
     {/* Download CTA Section */}
-    <section id="cta" className="w-full bg-white dark:bg-black pt-8 pb-16 md:pt-10 md:pb-20 px-6">
+    <section id="cta" className="w-full bg-white dark:bg-black py-12 md:py-14 px-6 md:px-8 lg:px-16">
       {/* Large Rounded Container with Brand Background */}
       <div className="max-w-7xl mx-auto rounded-[2rem] bg-[#c30010] p-4 md:p-8 shadow-2xl shadow-[#c30010]/20">
         
@@ -626,10 +525,10 @@ import IntelligenceBentoGrid from "@/components/ui/bento";
 {/* <PremiumPricing/> */}
         {/* FAQ */}
   {/* FAQ Section - Full Width Divider Style */}
-        <section className="relative py-8 bg-white dark:bg-black overflow-hidden">
+        <section className="relative py-12 md:py-14 bg-white dark:bg-black overflow-hidden">
       
           <div className="max-w-4xl mx-auto px-6 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-medium mb-10 text-center tracking-tight text-black dark:text-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-12 text-center tracking-tight text-black dark:text-white">
               Frequently asked questions
             </h2>
             

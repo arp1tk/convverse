@@ -41,15 +41,18 @@ const ModernPricingSection = () => {
   ];
 
   return (
-    <section id='pricing' className="bg-white dark:bg-black py-16 px-6 font-sans">
-      <div className="max-w-5xl mx-auto">
+    <section id='pricing' className="bg-white dark:bg-black py-12 md:py-14 px-6 md:px-8 lg:px-16 font-sans">
+      <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-neutral-900 dark:text-white mb-4">
+        <div className="text-center mb-12 md:mb-14">
+          <p className="text-[#c30010] dark:text-[#c30010] text-sm font-normal tracking-wide mb-4">
+            Pricing
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-neutral-900 dark:text-white mb-4">
             Transparent Pricing
           </h2>
-          <p className="text-neutral-500 dark:text-neutral-400 max-w-lg mx-auto">
+          <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
             Choose the plan that fits your workflow. No hidden fees, just pure intelligence.
           </p>
         </div>
@@ -132,7 +135,7 @@ const ModernPricingSection = () => {
 
         {/* Single Primary CTA */}
         <div className="flex flex-col items-center gap-6">
-          <button className="px-10 py-4 bg-[#c30010] hover:bg-[#a0000d] text-white rounded-full font-bold text-base shadow-lg shadow-[#c30010]/20 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]">
+          <button className="px-10 py-4 bg-[#c30010] hover:bg-[#c30010] text-white rounded-full font-bold text-base shadow-lg shadow-[#c30010]/20 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]">
             Add to Chrome — It's free!
           </button>
           

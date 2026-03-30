@@ -1,4 +1,3 @@
-import React from 'react';
 import { Check, Info, Layout, Users } from 'lucide-react';
 
 const PremiumPricing = () => {
@@ -74,7 +73,7 @@ const PremiumPricing = () => {
               {/* Action Button */}
               <button className={`w-full flex items-center justify-center gap-3 py-4 rounded-full font-bold text-sm transition-all duration-300 ${
                 idx === 0 
-                ? 'bg-[#c30010] hover:bg-[#a0000d] text-white shadow-lg shadow-[#c30010]/20' 
+                ? 'bg-[#c30010] hover:bg-[#c30010] text-white shadow-lg shadow-[#c30010]/20' 
                 : 'bg-white border border-neutral-200 text-black hover:bg-neutral-50 shadow-sm'
               }`}>
                 {plan.icon}

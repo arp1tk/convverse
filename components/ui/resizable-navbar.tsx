@@ -2,11 +2,11 @@
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-} from "framer-motion";
+    AnimatePresence,
+    motion,
+    useMotionValueEvent,
+    useScroll,
+} from "motion/react";
 
 import React, { useRef, useState } from "react";
 
@@ -214,9 +214,10 @@ export const MobileNavMenu = ({
   onClose
 }: MobileNavMenuProps) => {
   return (
-    <AnimatePresence>
+    <AnimatePresence initial={false} mode="wait">
       {isOpen && (
         <motion.div
+          key="mobile-nav-menu"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
